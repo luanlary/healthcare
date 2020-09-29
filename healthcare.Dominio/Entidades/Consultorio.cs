@@ -15,10 +15,10 @@ namespace healthcare.Dominio.Entidades
             LimparMensagensValidacao();
 
             if (string.IsNullOrWhiteSpace(this.Endereco))
-                AdcionarCritica("O campo endereço é de preenchimento obrigatório!");
+                AdicionarCritica("O campo endereço é de preenchimento obrigatório!");
 
             if (string.IsNullOrWhiteSpace(this.Telefone))
-                AdcionarCritica("O campo endereço é de preenchimento obrigatório!");
+                AdicionarCritica("O campo endereço é de preenchimento obrigatório!");
         }
     }
 }

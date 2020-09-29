@@ -12,7 +12,7 @@
            }"
            [(ngModel)]="consultorio.nome"
            #nome="ngModel"
-           required />
+            required />
 
     <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
       <div *ngIf="nome.errors.required">
@@ -20,27 +20,9 @@
       </div>
     </div>
 
-    <label for="inputCrm" class="sr-only">CRM</label>
-    <input type="text" id="inputCrm"
-           name="crm" placeholder="CRM"
-           class="form-control mb-2"
-           [ngClass]="{
-            'is-invalid':sobreNome.invalid && (crm.dirty || crm.touched),
-            'is-valid':sobreNome.valid && (crm.dirty || crm.touched)
-           }"
-           [(ngModel)]="consultorio.crm"
-           #crm="ngModel"
-           required />
-
-    <div class="invalid-feedback mb-2" *ngIf="crm.invalid && (crm.dirty || crm.touched)">
-      <div *ngIf="crm.errors.required">
-       O CRM é de preenchimento obrigatório
-      </div>
-    </div>
-
     <label for="inputEndereco" class="sr-only">Endereço</label>
     <input type="text" id="inputEndereco"
-           name="crm" placeholder="CRM"
+           name="crm" placeholder="Endereço"
            class="form-control mb-2"
            [(ngModel)]="consultorio.endereco"
            #endereco="ngModel"/>
@@ -66,7 +48,7 @@
       Consultório cadastrado com sucesso!<a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> voltar a lista.
     </div>
 
-    <img src="../../../assets/img/health.png" />
+    <img src="../../../assets/img/health.png"  width="200" heigth="200"/>
 
   </form>
 </div>

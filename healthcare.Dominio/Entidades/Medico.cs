@@ -18,13 +18,13 @@ namespace healthcare.Dominio.Entidades
             LimparMensagensValidacao();
 
             if (ConsultorioMedicos.Count >= 2)
-                AdcionarCritica("Um médico só pode estar relacionado a 2 (dois) consultórios!");
+                AdicionarCritica("Um médico só pode estar relacionado a 2 (dois) consultórios!");
             
             if (string.IsNullOrWhiteSpace(this.Nome))
-                AdcionarCritica("O campo nome é de preenchimento obrigatório!");
+                AdicionarCritica("O campo nome é de preenchimento obrigatório!");
 
             if (string.IsNullOrWhiteSpace(this.Crm))
-                AdcionarCritica("O campo CRM é de preenchimento obrigatório!"); 
+                AdicionarCritica("O campo CRM é de preenchimento obrigatório!"); 
                 
         }
     }
