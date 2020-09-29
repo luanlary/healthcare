@@ -1,0 +1,7 @@
+{
+
+  "ConnectionStrings": {
+    "HealthCareDB": "Server=localhost;Database=HealthCareDB;Uid=root;Pwd='';"
+  }
+
+}

@@ -1,12 +1,14 @@
-﻿namespace healthcare.Dominio.Entidades
+﻿using System.Collections.Generic;
+
+namespace healthcare.Dominio.Entidades
 {
     public class Consultorio: Entidade
     {
         public int Id { get; set; }
         public string Endereco { get; set; }
         public string Telefone { get; set; }
-        public int MedicoId { get; set; }
-        public virtual Medico Medico { get; set; }
+        public string Nome { get; set; }
+        public virtual ICollection<ConsultorioMedico> ConsultorioMedicos { get; set; }
 
         public override void Validate()
         {
