@@ -1,0 +1,72 @@
+<div class="text-center">
+  <form class="form-signin" #formSign="ngForm">
+    <h1 class="h4 mb-2 login">Cadastrar Consultorio</h1>  
+
+    <label for="inputNome" class="sr-only">Nome</label>
+    <input type="text" id="inputNome"
+           name="nome" placeholder="Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
+           [(ngModel)]="consultorio.nome"
+           #nome="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+      <div *ngIf="nome.errors.required">
+        Nome é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputCrm" class="sr-only">CRM</label>
+    <input type="text" id="inputCrm"
+           name="crm" placeholder="CRM"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':sobreNome.invalid && (crm.dirty || crm.touched),
+            'is-valid':sobreNome.valid && (crm.dirty || crm.touched)
+           }"
+           [(ngModel)]="consultorio.crm"
+           #crm="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="crm.invalid && (crm.dirty || crm.touched)">
+      <div *ngIf="crm.errors.required">
+       O CRM é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputEndereco" class="sr-only">Endereço</label>
+    <input type="text" id="inputEndereco"
+           name="crm" placeholder="CRM"
+           class="form-control mb-2"
+           [(ngModel)]="consultorio.endereco"
+           #endereco="ngModel"/>
+
+    <label for="inputTelefone" class="sr-only">Telefone</label>
+    <input type="text" id="inputTelefone"
+           name="crm" placeholder="Informe o telefone"
+           class="form-control mb-2"
+           [(ngModel)]="consultorio.telefone"
+           #telefone="ngModel"/>
+
+
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="!formSign.valid">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+      Cadastrar
+    </button>
+    <div><a [routerLink]='["/entrar"]'>Voltar</a></div>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <div class="alert alert-success" *ngIf="consultorioCadastrado">
+      Consultório cadastrado com sucesso!<a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> voltar a lista.
+    </div>
+
+    <img src="../../../assets/img/quick-b-logo.jpg" />
+
+  </form>
+</div>
