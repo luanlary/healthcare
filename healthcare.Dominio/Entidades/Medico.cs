@@ -16,6 +16,7 @@ namespace healthcare.Dominio.Entidades
         public override void Validate()
         {
             LimparMensagensValidacao();
+
             if (Consultorios.Count >= 2)
                 AdcionarCritica("Um médico só pode estar relacionado a 2 (dois) consultórios!");
             

@@ -10,6 +10,8 @@
 
         public override void Validate()
         {
+            LimparMensagensValidacao();
+
             if (string.IsNullOrWhiteSpace(this.Endereco))
                 AdcionarCritica("O campo endereço é de preenchimento obrigatório!");
 
