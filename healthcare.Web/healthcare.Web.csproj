@@ -15,6 +15,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +35,7 @@
     <None Remove="ClientApp\src\app\Modelo\consultorio.ts" />
     <None Remove="ClientApp\src\app\Modelo\consultoriomedico.ts" />
     <None Remove="ClientApp\src\app\Modelo\medico.ts" />
+    <None Remove="ClientApp\src\app\servicos\ConsultorioServico.ts" />
   </ItemGroup>
 
   <ItemGroup>
