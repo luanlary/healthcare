@@ -1,6 +1,7 @@
 import { Injectable, Inject } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
+
 import { Consultorio } from "../modelo/consultorio";
 
 
@@ -18,6 +19,15 @@ export class ConsultorioServico {
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseURL = baseUrl;
+  }
+
+  public ObterTodosConsultorios(): Observable<Consultorio[]> {
+    return this.http.get<Consultorio[]>(this.baseURL + "api/consultorio");
+  }
+
+  public deletar(consultorio: Consultorio): Observable<Consultorio[]> {
+
+    return this.http.post<Consultorio[]>(this.baseURL + "api/consultorio/deletar", JSON.stringify(consultorio), { headers: this.headers });
   }
 
 

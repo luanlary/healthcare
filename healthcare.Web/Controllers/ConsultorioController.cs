@@ -22,7 +22,10 @@ namespace healthcare.Web.Controllers
         {
             try
             {
-                return Ok();
+                var consultorioLista = _consultorioRepositorio.ObterTodos();
+                if (consultorioLista != null)
+                    return Json(consultorioLista);
+                return BadRequest("Não há consultórios cadastrados!");
             }
             catch (Exception ex)
             {
@@ -51,23 +54,43 @@ namespace healthcare.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Consultorio consultorio)
+        public IActionResult Post([FromBody] Consultorio consultorio)
         {
             try
             {
-                var consultorioCadastrado = _consultorioRepositorio.ObterPorNome(consultorio.Nome);
-
-                if (consultorioCadastrado != null)
-                    return BadRequest("Consultório já cadastrado no sistema");
-
                 consultorio.Validate();
-
                 if (!consultorio.EhValido)
+                {
                     return BadRequest(consultorio.ObterMensagensValidacao());
-                
-                _consultorioRepositorio.Adicionar(consultorio);
+                };
 
-                return Ok();
+                if (consultorio.Id <= 0)
+                {
+                    _consultorioRepositorio.Adicionar(consultorio);
+                }
+                else
+                {
+                    _consultorioRepositorio.Atualizar(consultorio);
+                }
+
+
+                return Created("api/consultorio", consultorio);
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        [HttpPost("deletar")]
+        public IActionResult deletar([FromBody] Consultorio consultorio)
+        {
+            try
+            {
+                _consultorioRepositorio.Remover(consultorio);
+                return Json(_consultorioRepositorio.ObterTodos());
 
             }
             catch (Exception ex)

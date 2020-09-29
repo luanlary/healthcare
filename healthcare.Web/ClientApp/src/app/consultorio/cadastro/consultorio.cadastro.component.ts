@@ -17,7 +17,11 @@ export class ConsultorioCadastroComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.consultorio = new Consultorio();
+    var consultorioEdicao = sessionStorage.getItem("consultorioSessao");
+    if (consultorioEdicao != "")
+      this.consultorio = JSON.parse(consultorioEdicao)
+    else
+      this.consultorio = new Consultorio();
     
   }
 
@@ -27,8 +31,9 @@ export class ConsultorioCadastroComponent implements OnInit {
     this.consultorioServico.cadastrarConsultorio(this.consultorio)
       .subscribe(
         consultorioJson => {
-          this.mensagem = "Consultorio cadastrado com sucesso!";
+          this.mensagem = "Consultorio salvo com sucesso!";
           this.ativar_spinner = false;
+          var consultorioEdicao = sessionStorage.setItem("consultorioSessao","");
         },
         e => {
           this.mensagem = e.error;

@@ -1,0 +1,21 @@
+<h1>Lista Consultórios</h1>
+<p *ngIf="!consultorios"><em>Carregando...</em></p>
+<button class="btn btn-success mb-2" (click)="adicionarConsultorio()">Adicionar consultorio</button>
+<table class='table table-striped' *ngIf="consultorios">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of consultorios">
+      <td>{{ c.nome }}</td>
+      <td>{{ c.telefone }}</td>
+      <td style="width:10%;"><button class="btn btn-secondary" (click)="editarConsultorio(c)">Editar</button></td>
+      <td style="width:10%;"><button class="btn btn-danger"    (click)="deletarConsultorio(c)">Excluir</button></td>
+    </tr>
+  </tbody>
+</table>

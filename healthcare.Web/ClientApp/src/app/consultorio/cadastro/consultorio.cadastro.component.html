@@ -22,14 +22,14 @@
 
     <label for="inputEndereco" class="sr-only">Endereço</label>
     <input type="text" id="inputEndereco"
-           name="crm" placeholder="Endereço"
+           name="endereco" placeholder="Endereço"
            class="form-control mb-2"
            [(ngModel)]="consultorio.endereco"
            #endereco="ngModel"/>
 
     <label for="inputTelefone" class="sr-only">Telefone</label>
     <input type="text" id="inputTelefone"
-           name="crm" placeholder="Informe o telefone"
+           name="telefone" placeholder="Informe o telefone"
            class="form-control mb-2"
            [(ngModel)]="consultorio.telefone"
            #telefone="ngModel"/>
@@ -37,15 +37,15 @@
 
     <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="!formSign.valid">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
-      Cadastrar
+      Salvar
     </button>
-    <div><a [routerLink]='["/entrar"]'>Voltar</a></div>
+    <div><a [routerLink]='["/lista-consultorio"]'>Voltar</a></div>
 
     <div class="alert alert-danger" *ngIf="mensagem">
       {{mensagem}}
     </div>
     <div class="alert alert-success" *ngIf="consultorioCadastrado">
-      Consultório cadastrado com sucesso!<a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> voltar a lista.
+      Consultório cadastrado com sucesso!<a class="alert-link" [routerLink]='["/lista-consultorio"]'>Clique aqui</a> voltar a lista.
     </div>
 
     <img src="../../../assets/img/health.png"  width="200" heigth="200"/>

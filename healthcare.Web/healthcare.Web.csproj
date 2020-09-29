@@ -32,6 +32,9 @@
     <None Remove="ClientApp\src\app\consultorio\cadastro\consultorio.cadastro.component.css" />
     <None Remove="ClientApp\src\app\consultorio\cadastro\consultorio.cadastro.component.html" />
     <None Remove="ClientApp\src\app\consultorio\cadastro\consultorio.cadastro.component.ts" />
+    <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.css" />
+    <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.html" />
+    <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.ts" />
     <None Remove="ClientApp\src\app\Modelo\consultorio.ts" />
     <None Remove="ClientApp\src\app\Modelo\consultoriomedico.ts" />
     <None Remove="ClientApp\src\app\Modelo\medico.ts" />
@@ -50,6 +53,12 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\consultorio\cadastro\consultorio.cadastro.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\consultorio\lista\consultorio.lista.component.css">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\consultorio\lista\consultorio.lista.component.html">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\Modelo\consultorio.ts" />
