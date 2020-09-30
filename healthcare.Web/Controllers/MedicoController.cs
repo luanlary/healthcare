@@ -32,7 +32,7 @@ namespace healthcare.Web.Controllers
 
 
         [HttpPost("VerificarMedico")]
-        public ActionResult VerificarUsuario([FromBody] Medico medico)
+        public ActionResult VerificarMedico([FromBody] Medico medico)
         {
             try
             {

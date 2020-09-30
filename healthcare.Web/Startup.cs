@@ -41,6 +41,7 @@ namespace healthcare.Web
             services.AddScoped<IMedicoRepositorio, MedicoRepositorio>();
             services.AddScoped<IConsultorioRepositorio, ConsultorioRepositorio>();
             services.AddScoped<IConsultorioMedicoRepositorio, ConsultorioMedicoRepositorio>();
+            services.AddScoped<HealthCareContexto>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

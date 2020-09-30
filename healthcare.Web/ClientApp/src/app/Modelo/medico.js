@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Consultorio = void 0;
-var Consultorio = /** @class */ (function () {
-    function Consultorio() {
+exports.Medico = void 0;
+var Medico = /** @class */ (function () {
+    function Medico() {
     }
-    return Consultorio;
+    return Medico;
 }());
-exports.Consultorio = Consultorio;
+exports.Medico = Medico;
 //# sourceMappingURL=medico.js.map

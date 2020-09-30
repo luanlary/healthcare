@@ -8,8 +8,7 @@ namespace healthcare.Dominio.Entidades
         public string Endereco { get; set; }
         public string Telefone { get; set; }
         public string Nome { get; set; }
-        public virtual ICollection<ConsultorioMedico> ConsultorioMedicos { get; set; }
-
+        
         public override void Validate()
         {
             LimparMensagensValidacao();

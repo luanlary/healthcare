@@ -9,6 +9,7 @@ namespace healthcare.Repositorio.Contexto
     {
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Consultorio> Consultorios { get; set; }
+        public DbSet<ConsultorioMedico> ConsultorioMedico { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /// Classes de mapeamento
