@@ -13,6 +13,7 @@ import { MedicoCadastroComponent } from './medico/cadastro/medico.cadastro.compo
 import { MedicoListaComponent } from './medico/lista/medico.lista.component';
 import { MedicoServico } from './servicos/MedicoServico';
 import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consultoriomedico.lista.component';
+import { ConsultorioMedicoServico } from './servicos/ConsultorioMedicoServico';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consu
       { path: 'lista-consultorio-medico', component: ConsultorioMedicoListaComponent },
     ])
   ],
-  providers: [ConsultorioServico, MedicoServico],
+  providers: [ConsultorioServico, MedicoServico, ConsultorioMedicoServico],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -42,7 +42,8 @@ namespace healthcare.Repositorio.Migrations
 
             modelBuilder.Entity("healthcare.Dominio.Entidades.ConsultorioMedico", b =>
                 {
-                    b.Property<int>("ConsultorioId");
+                    b.Property<int>("ConsultorioId")
+                    .ValueGeneratedOnAdd(); ;
 
                     b.Property<int>("MedicoId");
 

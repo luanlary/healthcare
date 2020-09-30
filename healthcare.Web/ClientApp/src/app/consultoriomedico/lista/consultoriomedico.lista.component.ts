@@ -31,20 +31,7 @@ export class ConsultorioMedicoListaComponent implements OnInit {
 
     private consultorioServico: ConsultorioServico, private consultorioMedicoServico: ConsultorioMedicoServico) {
 
-    this.ativarSpinner = true;
 
-    this.consultorioMedicoServico.ObterTodosMedicosServicos()
-      .subscribe(
-        lista_consultoriomedicos => {
-          this.consultorioMedicos = lista_consultoriomedicos;
-          this.ativarSpinner = false;
-        },
-        e => {
-          console.log(e.error);
-          this.ativarSpinner = false;
-          this.mensagem = e.error;
-        }
-      );
   }
 
   public adicionarMedicoServico() {
@@ -52,14 +39,22 @@ export class ConsultorioMedicoListaComponent implements OnInit {
     var CosultorioMedicoServicoVar = new ConsultorioMedico();
     CosultorioMedicoServicoVar.consultorioId = this.ConsultorioId;
     CosultorioMedicoServicoVar.medicoId = this.MedicoId;
-    alert(CosultorioMedicoServicoVar.medicoId);
+    
     this.consultorioMedicoServico.cadastrarConsultorioMedico(CosultorioMedicoServicoVar)
       .subscribe(
         lista_consutoriomedico => {
-          this.consultorioMedicos = lista_consutoriomedico;
+          this.consultorioMedicoServico.ObterTodosMedicosServicos()
+            .subscribe(
+              nova_lista => {
+                this.consultorioMedicos = nova_lista;
+              },
+              er => {
+                console.log(er.error);
+              }
+            );
         },
-        e => {
-          console.log(e.error)
+         e => {
+            console.log(e.error)
         }
       );
    
@@ -87,6 +82,21 @@ export class ConsultorioMedicoListaComponent implements OnInit {
         },
         e => {
           console.log(e.error);
+        }
+    );
+
+    this.ativarSpinner = true;
+
+    this.consultorioMedicoServico.ObterTodosMedicosServicos()
+      .subscribe(
+        lista_consultoriomedicos => {
+          this.consultorioMedicos = lista_consultoriomedicos;
+          this.ativarSpinner = false;
+        },
+        e => {
+          console.log(e.error);
+          this.ativarSpinner = false;
+          this.mensagem = e.error;
         }
       );
   }

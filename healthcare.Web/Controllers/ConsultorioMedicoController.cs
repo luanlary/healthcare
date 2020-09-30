@@ -75,6 +75,7 @@ namespace healthcare.Web.Controllers
                 
                 if (consultoriomedico.Id <= 0)
                 {
+                    
                     _consultorioMedicoRepositorio.Adicionar(consultoriomedico);
                 }
                 else
@@ -83,7 +84,7 @@ namespace healthcare.Web.Controllers
                 }
 
 
-                return Json(_consultorioMedicoRepositorio.ObterTodos());
+                return Ok(consultoriomedico);
 
 
             }

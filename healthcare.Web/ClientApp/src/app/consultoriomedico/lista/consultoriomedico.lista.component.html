@@ -26,18 +26,16 @@
 <table class='table table-striped' *ngIf="consultorioMedicos">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th></th>
+      <th>Médico</th>
+      <th>Consultório</th>      
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let m of medicos">
-      <td>{{ m.nome }}</td>
-      <td>{{ m.telefone }}</td>
-      <td style="width:10%;"><button class="btn btn-secondary" (click)="editarMedico(m)">Editar</button></td>
-      <td style="width:10%;"><button class="btn btn-danger" (click)="deletarMedico(m)">Excluir</button></td>
+    <tr *ngFor="let c of consultorioMedicos">
+      <td>{{ c.nomeMedico }}</td>
+      <td>{{ c.nomeConsultorio }}</td>      
+      <td style="width:10%;"><button class="btn btn-danger" (click)="deletarMedico(c)">Excluir</button></td>
     </tr>
   </tbody>
 </table>

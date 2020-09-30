@@ -9,7 +9,8 @@ namespace healthcare.Repositorio.Config
         
         public void Configure(EntityTypeBuilder<ConsultorioMedico> builder)
         {
-            builder.HasKey(c=> c.Id);
+            builder.HasKey(c => c.Id);
+
             builder
                 .Property(c => c.ConsultorioId)
                 .IsRequired();
