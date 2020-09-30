@@ -60,8 +60,27 @@ export class ConsultorioMedicoListaComponent implements OnInit {
    
   }
 
-  public deletarMedico(medico: Medico) {
-
+  public deletarConsultorioMedico(consultoriomedico: ConsultorioMedico) {
+    var retorno = confirm("Deseja realmente deletar o médico selecionado?");
+    if (!retorno)
+      return;
+    this.consultorioMedicoServico.deletar(consultoriomedico)
+      .subscribe(
+        lista_consutoriomedico => {
+          this.consultorioMedicoServico.ObterTodosMedicosServicos()
+            .subscribe(
+              nova_lista => {
+                this.consultorioMedicos = nova_lista;
+              },
+              er => {
+                console.log(er.error);
+              }
+            );
+        },
+        e => {
+          console.log(e.error)
+        }
+      );
   }
 
   ngOnInit(): void {
