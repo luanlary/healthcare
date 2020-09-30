@@ -11,6 +11,9 @@ import { ConsultorioServico } from './servicos/ConsultorioServico';
 import { ConsultorioListaComponent } from './consultorio/lista/consultorio.lista.component';
 import { MedicoCadastroComponent } from './medico/cadastro/medico.cadastro.component';
 import { MedicoListaComponent } from './medico/lista/medico.lista.component';
+import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consultoriomedico.lista.component';
+import { MedicoServico } from './servicos/MedicoServico';
+import { ConsultorioMedicoServico } from './servicos/ConsultorioMedicoServico';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { MedicoListaComponent } from './medico/lista/medico.lista.component';
     ConsultorioListaComponent,
     MedicoCadastroComponent,
     MedicoListaComponent,
+    ConsultorioMedicoListaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,9 +36,10 @@ import { MedicoListaComponent } from './medico/lista/medico.lista.component';
       { path: 'cadastro-medico', component: MedicoCadastroComponent },
       { path: 'lista-consultorio', component: ConsultorioListaComponent },
       { path: 'lista-medico', component: MedicoListaComponent },
+      { path: 'lista-consultorio-medico', component: ConsultorioMedicoListaComponent },
     ])
   ],
-  providers: [ConsultorioServico],
+  providers: [ConsultorioServico, MedicoServico, ConsultorioMedicoServico],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,41 @@
+<h1>Lista Médicos e Consultórios</h1>
+<p *ngIf="!consultorioMedicos"><em>Carregando...</em></p>
+<div class="form-inline">
+  <div class="mb-2" style="margin-right:30px;">
+    <h2 class="h5 titulo">Selecione o Médico </h2>
+    <select>
+      <option *ngFor="let m of medicos" value={{m.id}}>
+        {{m.nome}}
+      </option>
+    </select>
+  </div>
+  <div class="mb-2">
+    <h2 class="h5 titulo">Selecione o Consultório </h2>
+    <select>
+      <option *ngFor="let c of consultorios" value={{c.id}}>
+        {{c.nome}}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="mb-4">
+  <button class="btn btn-success mb-2">Vincular</button>
+</div>
+<table class='table table-striped' *ngIf="consultorioMedicos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of medicos">
+      <td>{{ m.nome }}</td>
+      <td>{{ m.telefone }}</td>
+      <td style="width:10%;"><button class="btn btn-secondary" (click)="editarMedico(m)">Editar</button></td>
+      <td style="width:10%;"><button class="btn btn-danger" (click)="deletarMedico(m)">Excluir</button></td>
+    </tr>
+  </tbody>
+</table>
