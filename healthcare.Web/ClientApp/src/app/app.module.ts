@@ -11,9 +11,15 @@ import { ConsultorioServico } from './servicos/ConsultorioServico';
 import { ConsultorioListaComponent } from './consultorio/lista/consultorio.lista.component';
 import { MedicoCadastroComponent } from './medico/cadastro/medico.cadastro.component';
 import { MedicoListaComponent } from './medico/lista/medico.lista.component';
+<<<<<<< HEAD
 import { MedicoServico } from './servicos/MedicoServico';
 import { ConsultorioMedicoServico } from './servicos/ConsultorioMedicoServico';
 import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consultoriomedico.lista.component';
+=======
+import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consultoriomedico.lista.component';
+import { MedicoServico } from './servicos/MedicoServico';
+import { ConsultorioMedicoServico } from './servicos/ConsultorioMedicoServico';
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
 
 @NgModule({
   declarations: [

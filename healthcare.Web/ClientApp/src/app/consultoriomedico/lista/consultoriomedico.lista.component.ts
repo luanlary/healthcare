@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+<<<<<<< HEAD
 import { MedicoServico } from "../../servicos/MedicoServico";
+=======
+import {  MedicoServico } from "../../servicos/MedicoServico";
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
 import { Medico } from "../../Modelo/medico";
 import { Consultorio } from "../../modelo/consultorio";
 import { ConsultorioMedico } from "../../modelo/consultoriomedico";
@@ -20,13 +24,20 @@ export class ConsultorioMedicoListaComponent implements OnInit {
   public consultorios: Consultorio[];
   public consultorioMedico: ConsultorioMedico;
   public consultorioMedicos: ConsultorioMedico[];
+<<<<<<< HEAD
   public MedicoId: number;
   public ConsultorioId: number;
+=======
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
   public mensagem: string;
   public ativarSpinner: boolean;
 
   constructor(private medicoServico: MedicoServico, private router: Router,
+<<<<<<< HEAD
     private consultorioServico: ConsultorioServico, private consultorioMedicoServico: ConsultorioMedicoServico) {
+=======
+    private consultorioServico: ConsultorioServico, private consultoriomedicoServico: ConsultorioMedicoServico) {
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
     this.ativarSpinner = true;
 
     /*this.consultoriomedicoServico.ObterTodosMedicosServicos()
@@ -44,12 +55,19 @@ export class ConsultorioMedicoListaComponent implements OnInit {
   }
 
   public adicionarMedicoServico() {
+<<<<<<< HEAD
    alert(this.MedicoId + " - " + this.ConsultorioId);
+=======
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
   }
 
   public deletarMedico(medico: Medico) {
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> e567db1ea797874a49190c7efac82e322884e61d
   }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@
 <div class="form-inline">
   <div class="mb-2" style="margin-right:30px;">
     <h2 class="h5 titulo">Selecione o Médico </h2>
+
     <select [(ngModel)]="MedicoId">
       <option *ngFor="let m of medicos" value={{m.id}}>
         {{m.nome}}
@@ -19,6 +20,7 @@
   </div>
 </div>
 <div class="mb-4">
+
   <button class="btn btn-success mb-2" (click)="adicionarMedicoServico()">Vincular</button>
 </div>
 <table class='table table-striped' *ngIf="consultorioMedicos">

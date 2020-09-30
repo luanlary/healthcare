@@ -4,7 +4,7 @@ import { ConsultorioServico } from "../../servicos/ConsultorioServico";
 import { Consultorio } from "../../Modelo/consultorio";
 
 @Component({
-  selector: "pesquisa-produto",
+  selector: "pesquisa-consultorio",
   templateUrl: "consultorio.lista.component.html",
   styleUrls: ["consultorio.lista.component.css"]
 })
