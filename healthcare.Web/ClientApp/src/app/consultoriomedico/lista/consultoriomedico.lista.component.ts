@@ -20,6 +20,8 @@ export class ConsultorioMedicoListaComponent implements OnInit {
   public consultorios: Consultorio[];
   public consultorioMedico: ConsultorioMedico;
   public consultorioMedicos: ConsultorioMedico[];
+  public MedicoId: number;
+  public ConsultorioId: number;
   public mensagem: string;
   public ativarSpinner: boolean;
 
@@ -42,6 +44,7 @@ export class ConsultorioMedicoListaComponent implements OnInit {
   }
 
   public adicionarMedicoServico() {
+   alert(this.MedicoId + " - " + this.ConsultorioId);
   }
 
   public deletarMedico(medico: Medico) {
