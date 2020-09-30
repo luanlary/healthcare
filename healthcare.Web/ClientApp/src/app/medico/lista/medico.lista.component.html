@@ -1,0 +1,21 @@
+<h1>Lista Médicos</h1>
+<p *ngIf="!medicos"><em>Carregando...</em></p>
+<button class="btn btn-success mb-2" (click)="adicionarMedico()">Adicionar Médico</button>
+<table class='table table-striped' *ngIf="medicos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of medicos">
+      <td>{{ m.nome }}</td>
+      <td>{{ m.telefone }}</td>
+      <td style="width:10%;"><button class="btn btn-secondary" (click)="editarMedico(m)">Editar</button></td>
+      <td style="width:10%;"><button class="btn btn-danger"    (click)="deletarMedico(m)">Excluir</button></td>
+    </tr>
+  </tbody>
+</table>

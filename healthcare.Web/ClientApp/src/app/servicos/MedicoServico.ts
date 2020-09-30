@@ -21,17 +21,17 @@ export class MedicoServico {
     this.baseURL = baseUrl;
   }
 
-  public ObterTodosConsultorios(): Observable<Medico[]> {
-    return this.http.get<Medico[]>(this.baseURL + "api/consultorio");
+  public ObterTodosMedicos(): Observable<Medico[]> {
+    return this.http.get<Medico[]>(this.baseURL + "api/medico");
   }
 
   public deletar(medico: Medico): Observable<Medico[]> {
 
-    return this.http.post<Medico[]>(this.baseURL + "api/consultorio/deletar", JSON.stringify(medico), { headers: this.headers });
+    return this.http.post<Medico[]>(this.baseURL + "api/medico/deletar", JSON.stringify(medico), { headers: this.headers });
   }
 
 
-  public cadastrarConsultorio(medico: Medico): Observable<Medico> {
+  public cadastrarMedico(medico: Medico): Observable<Medico> {
     return this.http.post<Medico>(this.baseURL + "api/medico", JSON.stringify(medico), { headers: this.headers });
   }
 }

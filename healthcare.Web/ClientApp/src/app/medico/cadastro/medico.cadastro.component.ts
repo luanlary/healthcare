@@ -27,7 +27,7 @@ export class MedicoCadastroComponent implements OnInit {
   public cadastrar() {
     this.ativar_spinner = true;
 
-    this.medicoServico.cadastrarConsultorio(this.medico)
+    this.medicoServico.cadastrarMedico(this.medico)
       .subscribe(
         consultorioJson => {
           this.mensagem = "Medico salvo com sucesso!";
