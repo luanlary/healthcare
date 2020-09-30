@@ -1,0 +1,72 @@
+<div class="text-center">
+  <form class="form-signin" #formSign="ngForm">
+    <h1 class="h4 mb-2 login">Cadastrar Medico</h1>
+
+    <label for="inputNome" class="sr-only">Nome</label>
+    <input type="text" id="inputNome"
+           name="nome" placeholder="Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
+           [(ngModel)]="medico.nome"
+           #nome="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+      <div *ngIf="nome.errors.required">
+        Nome é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputCRM" class="sr-only">CRM</label>
+    <input type="text" id="inputCRM"
+           name="endereco" placeholder="Informe o CRM"
+           class="form-control mb-2"
+           [(ngModel)]="medico.crm"
+           #crm="ngModel" />
+
+    <label for="inputTelefone" class="sr-only">Telefone</label>
+    <input type="text" id="inputTelefone"
+           name="telefone" placeholder="Informe o telefone"
+           class="form-control mb-2"
+           [(ngModel)]="medico.telefone"
+           #telefone="ngModel" />
+
+    <label for="inputPreco" class="sr-only">Valor Consulta</label>
+    <input type="number" id="inputPreco"
+           name="precoProduto"
+           class="form-control mb-2"
+           placeholder="Preço"
+           [(ngModel)]="medico.valorConsulta"
+           [ngClass]="{
+           'is-invalid':valorConsulta.invalid && (valorConsulta.dirty || valorConsulta.touched),
+           'is-valid': valorConsulta.valid && (valorConsulta.dirty || valorConsulta.touched)
+           }"
+           #valorConsulta="ngModel"
+           required />
+    <div class="invalid-feedback mb-2" *ngIf="valorConsulta.invalid && (valorConsulta.dirty || valorConsulta.touched)">
+      <div *ngIf="valorConsulta.errors.required">
+        Informe um valor para a consulta válido para o produto!
+      </div>
+    </div>
+
+
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="!formSign.valid">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+      Salvar
+    </button>
+    <div><a [routerLink]='["/lista-medico"]'>Voltar</a></div>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+    <div class="alert alert-success" *ngIf="medicoCadastrado">
+      Consultório cadastrado com sucesso!<a class="alert-link" [routerLink]='["/lista-medico"]'>Clique aqui</a> voltar a lista.
+    </div>
+
+    <img src="../../../assets/img/health.png" width="200" heigth="200" />
+
+  </form>
+</div>

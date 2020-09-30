@@ -17,7 +17,7 @@ namespace healthcare.Dominio.Entidades
         {
             LimparMensagensValidacao();
 
-            if (ConsultorioMedicos.Count >= 2)
+            if ((ConsultorioMedicos != null) && (ConsultorioMedicos.Count >= 2))
                 AdicionarCritica("Um médico só pode estar relacionado a 2 (dois) consultórios!");
             
             if (string.IsNullOrWhiteSpace(this.Nome))

@@ -1,6 +1,6 @@
 import { ConsultorioMedico } from "./consultoriomedico";
 
-export class Consultorio {
+export class Medico {
   public id: number;
   public crm: string;
   public nome: string;

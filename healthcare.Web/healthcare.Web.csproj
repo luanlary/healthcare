@@ -35,10 +35,14 @@
     <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.css" />
     <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.html" />
     <None Remove="ClientApp\src\app\consultorio\lista\consultorio.lista.component.ts" />
+    <None Remove="ClientApp\src\app\medico\medico.cadastro.component.css" />
+    <None Remove="ClientApp\src\app\medico\medico.cadastro.component.html" />
+    <None Remove="ClientApp\src\app\medico\medico.cadastro.component.ts" />
     <None Remove="ClientApp\src\app\Modelo\consultorio.ts" />
     <None Remove="ClientApp\src\app\Modelo\consultoriomedico.ts" />
     <None Remove="ClientApp\src\app\Modelo\medico.ts" />
     <None Remove="ClientApp\src\app\servicos\ConsultorioServico.ts" />
+    <None Remove="ClientApp\src\app\servicos\MedicoServico.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +65,12 @@
     <TypeScriptCompile Include="ClientApp\src\app\consultorio\lista\consultorio.lista.component.html">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\medico\cadastro\medico.cadastro.component.css">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\medico\cadastro\medico.cadastro.component.html">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\Modelo\consultorio.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Modelo\consultoriomedico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Modelo\medico.ts" />
@@ -70,6 +80,15 @@
     <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\medico\cadastro\medico.cadastro.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\servicos\MedicoServico.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

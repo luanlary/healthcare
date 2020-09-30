@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ConsultorioCadastroComponent } from './consultorio/cadastro/consultorio.cadastro.component';
 import { ConsultorioServico } from './servicos/ConsultorioServico';
 import { ConsultorioListaComponent } from './consultorio/lista/consultorio.lista.component';
+import { MedicoCadastroComponent } from './medico/cadastro/medico.cadastro.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ConsultorioListaComponent } from './consultorio/lista/consultorio.lista
     FetchDataComponent,
     ConsultorioCadastroComponent,
     ConsultorioListaComponent,
+    MedicoCadastroComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,6 +34,7 @@ import { ConsultorioListaComponent } from './consultorio/lista/consultorio.lista
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'cadastro-consultorio', component: ConsultorioCadastroComponent },
+      { path: 'cadastro-medico', component: MedicoCadastroComponent },
       { path: 'lista-consultorio', component: ConsultorioListaComponent },
     ])
   ],

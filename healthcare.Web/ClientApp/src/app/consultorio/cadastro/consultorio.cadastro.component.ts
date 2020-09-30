@@ -18,7 +18,7 @@ export class ConsultorioCadastroComponent implements OnInit {
   }
   ngOnInit(): void {
     var consultorioEdicao = sessionStorage.getItem("consultorioSessao");
-    if (consultorioEdicao != "")
+    if ((consultorioEdicao != "") && (consultorioEdicao != null))
       this.consultorio = JSON.parse(consultorioEdicao)
     else
       this.consultorio = new Consultorio();
