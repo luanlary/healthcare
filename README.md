@@ -11,13 +11,14 @@ Abra o arquivo config.json na raiz do projeto: Selecione os dados da sua instân
 ```bash
 npm install 
 ```
-Abra o console de instalação do NUGET e digite: Update-Database para criar a base de dados
-
-## Uso do sistema
-
-1º - O sistema permite o cadastro de médicos
-2º - O sistema permite o cadastro de consultório
-1º - O sistema permite o vinvular médicos e consultório (cada médico pode estar ligado a no máximo 2 consultórios)
+Abra o console de instalação do NUGET e digite: 
+```bash
+Update-Database 
+```
+para rodar
+```bash
+ ng build --watch
+```
 
 ## Contribuição
 O sistema foi feito exclusivamente para teste de admimissão, qualquer um é livre para altera-lo e distribuir da forma que lhe interessar
