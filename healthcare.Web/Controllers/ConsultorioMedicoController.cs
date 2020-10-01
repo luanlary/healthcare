@@ -52,13 +52,13 @@ namespace healthcare.Web.Controllers
         public ActionResult VerificarConsultorioMedico([FromBody] ConsultorioMedico consultoriomedico)
         {
             try
-            {
-                var consultorioRetorno = 0; //consultorioMedicoRepositorio.ObterPorNome(consultorio.Nome);
+            {                
+                var qtdConsultorios = _consultorioMedicoRepositorio.ObterQuantidade(consultoriomedico.MedicoId);
 
-                if (consultorioRetorno != null)
-                    return Ok(consultorioRetorno);
+                if (qtdConsultorios < 2)
+                    return Ok(true);
 
-                return BadRequest("Consultório ou médico com dados inválidos");
+                return Ok(false);
 
             }
             catch (Exception ex)

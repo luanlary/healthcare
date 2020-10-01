@@ -38,6 +38,9 @@ public cadastrarConsultorioMedico(consultoriomedico: ConsultorioMedico): Observa
   return this.http.post<ConsultorioMedico[]>(this.baseURL + "api/consultoriomedico", JSON.stringify(consultoriomedico), { headers: this.headers });
 }
 
+  public VerificarConsultorioMedico(consultoriomedico: ConsultorioMedico): Observable<boolean> {
 
+    return this.http.post<boolean>(this.baseURL + "api/consultoriomedico/VerificarConsultorioMedico", JSON.stringify(consultoriomedico), { headers: this.headers });
+}
 
 }

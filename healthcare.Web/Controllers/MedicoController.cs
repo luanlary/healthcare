@@ -31,25 +31,6 @@ namespace healthcare.Web.Controllers
         }
 
 
-        [HttpPost("VerificarMedico")]
-        public ActionResult VerificarMedico([FromBody] Medico medico)
-        {
-            try
-            {
-                var consultorioRetorno = _medicoRepositorio.ObterPorCRM(medico.Crm);
-
-                if (consultorioRetorno != null)
-                    return Ok(consultorioRetorno);
-
-                return BadRequest("Consultório com dados inválidos");
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
         [HttpPost]
         public IActionResult Post([FromBody] Medico medico)
         {

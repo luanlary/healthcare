@@ -16,6 +16,7 @@ import { ConsultorioMedicoListaComponent } from './consultoriomedico/lista/consu
 import { ConsultorioMedicoServico } from './servicos/ConsultorioMedicoServico';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

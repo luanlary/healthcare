@@ -5,5 +5,6 @@ namespace healthcare.Repositorio.Repositorios
 {
     public interface IConsultorioMedicoRepositorio : IBaseRepositorio<ConsultorioMedico>
     {
+        int ObterQuantidade(int  Id);
     }
 }

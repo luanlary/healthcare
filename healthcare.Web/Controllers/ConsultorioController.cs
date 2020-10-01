@@ -34,25 +34,6 @@ namespace healthcare.Web.Controllers
         }
 
 
-        [HttpPost("VerificarConsultorio")]
-        public ActionResult VerificarConsultorio([FromBody] Consultorio consultorio)
-        {
-            try
-            {
-                var consultorioRetorno = _consultorioRepositorio.ObterPorNome(consultorio.Nome);
-
-                if (consultorioRetorno != null)
-                    return Ok(consultorioRetorno);
-
-                return BadRequest("Consultório com dados inválidos");
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
         [HttpPost]
         public IActionResult Post([FromBody] Consultorio consultorio)
         {

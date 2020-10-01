@@ -9,8 +9,8 @@ import { ConsultorioMedicoServico } from "../../servicos/ConsultorioMedicoServic
 
 @Component({
   selector: "pesquisa-consultorio-medico",
-  templateUrl: "consultoriomedico.lista.component.html",
-  styleUrls: ["consultoriomedico.lista.component.css"]
+  templateUrl: "./consultoriomedico.lista.component.html",
+  styleUrls: ["./consultoriomedico.lista.component.css"]
 })
 
 
@@ -35,33 +35,50 @@ export class ConsultorioMedicoListaComponent implements OnInit {
   }
 
   public adicionarMedicoServico() {
+  
+
     
     var CosultorioMedicoServicoVar = new ConsultorioMedico();
     CosultorioMedicoServicoVar.consultorioId = this.ConsultorioId;
     CosultorioMedicoServicoVar.medicoId = this.MedicoId;
     
-    this.consultorioMedicoServico.cadastrarConsultorioMedico(CosultorioMedicoServicoVar)
+    this.consultorioMedicoServico.VerificarConsultorioMedico(CosultorioMedicoServicoVar)
       .subscribe(
-        lista_consutoriomedico => {
-          this.consultorioMedicoServico.ObterTodosMedicosServicos()
-            .subscribe(
-              nova_lista => {
-                this.consultorioMedicos = nova_lista;
-              },
-              er => {
-                console.log(er.error);
-              }
-            );
+        retorno => {
+          
+          if (!retorno) {
+              this.mensagem = "Este médico já está vinculado a dois consultórios!";            
+            return;
+          } else {
+            this.mensagem = "";
+            this.consultorioMedicoServico.cadastrarConsultorioMedico(CosultorioMedicoServicoVar)
+              .subscribe(
+                lista_consutoriomedico => {
+                  this.consultorioMedicoServico.ObterTodosMedicosServicos()
+                    .subscribe(
+                      nova_lista => {
+                        this.consultorioMedicos = nova_lista;
+                      },
+                      er => {
+                        console.log(er.error);
+                      }
+                    );
+                },
+                e => {
+                  console.log(e.error)
+                }
+              );
+
+          }
         },
-         e => {
-            console.log(e.error)
+        e => {
+          console.log(e.error)
         }
-      );
-   
+      );   
   }
 
   public deletarConsultorioMedico(consultoriomedico: ConsultorioMedico) {
-    var retorno = confirm("Deseja realmente deletar o médico selecionado?");
+    var retorno = confirm("Deseja realmente deletar o vinvulo do médico selecionado?");
     if (!retorno)
       return;
     this.consultorioMedicoServico.deletar(consultoriomedico)
